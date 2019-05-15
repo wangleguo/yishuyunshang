@@ -17,7 +17,7 @@ class EmailManager():
 
         message['from'] = 'service@jishuapp.cn'
         message['to'] = '452768881@qq.com'
-        password = "west999@"
+        password = ""
         message['subject'] = Header(u'技术小程序个商业解决方案', 'utf-8').encode()
         smtp_server = "smtp.jishuapp.cn"
         server = smtplib.SMTP_SSL('smtp.jishuapp.cn', 465)  # SMTP协议默认端口是25

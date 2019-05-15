@@ -206,7 +206,7 @@ for receiver in receivers:
 
     try:
         smtpObj = smtplib.SMTP_SSL('smtp.jishuapp.cn', 465) #网易jishuapp.cn邮箱 使用非本地服务器，需要建立和网易邮件服务 的SSL链接，端口465
-        smtpObj.login(sender, "west999@") #登录认证
+        smtpObj.login(sender, "") #登录认证
         
         smtpObj.sendmail(sender,receiver,message.as_string()) #发送邮件主题
         print('邮件发送成功！')
