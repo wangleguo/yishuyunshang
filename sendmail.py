@@ -9,9 +9,10 @@ import time
 import sys
 result=[]
 with open('sendmailfile.txt','r') as f:
-        for line in f:
-                result.append(list(line.strip('\n').split(',')))
-        print(result)
+    for line in f:
+        result.append(line.strip('\n'))
+    sendmailset=set(result)
+    #print(sendmailset)
 
 dt = datetime.datetime.now()
 str_time = dt.strftime('%Y-%m-%d %H:%M:%S')#用于在邮件发送标题栏 附上发送日期+时间
@@ -20,7 +21,7 @@ str_time = dt.strftime('%Y-%m-%d %H:%M:%S')#用于在邮件发送标题栏 附�
 sender = 'service@jishuapp.cn'
 #发送方邮件设置的授权码
 #pwd = 'xxxx'#填入发送方邮箱sender的授权码,注意不是密码，如何获取这个，请百度163邮箱获取SMTP/POP3获取授权码，即可知道
-receivers = {"452768881@qq.com","wlg801260@163.com"} #输入一个你要收取邮件的邮箱地址
+receivers = sendmailset #输入一个你要收取邮件的邮箱地址
  
 #邮件的内容、收件人、发件人信息
 #mail_message = '没有成功发送HTML'
